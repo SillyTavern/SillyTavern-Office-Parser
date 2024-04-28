@@ -20,7 +20,7 @@ Supported formats:
 
 ```bash
 cd plugins
-git clone https://github.com/Cohee1207/SillyTavern-Office-Parser
+git clone https://github.com/SillyTavern/SillyTavern-Office-Parser
 ```
 
 3. Restart the SillyTavern server.
