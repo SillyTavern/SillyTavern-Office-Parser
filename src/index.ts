@@ -35,7 +35,7 @@ export async function init(router: Router): Promise<void> {
             const base64Data = String(req.body.data).split(',')[1];
             const data = Buffer.from(base64Data, 'base64');
             const result = await officeParser.parseOfficeAsync(data);
-            console.log(chalk.green(MODULE_NAME), `Successfully parsed document`);
+            console.log(chalk.green(MODULE_NAME), 'Successfully parsed document');
             return res.send(result);
         } catch (error) {
             console.error(chalk.red(MODULE_NAME), 'Parsing failed', error);
