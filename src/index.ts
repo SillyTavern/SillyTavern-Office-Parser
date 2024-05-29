@@ -23,7 +23,7 @@ const MODULE_NAME = '[SillyTavern-Office-Parser]';
  * @param router Express Router
  */
 export async function init(router: Router): Promise<void> {
-    const jsonParser = bodyParser.json();
+    const jsonParser = bodyParser.json({ limit: '100mb' });
     router.post('/probe', (_req, res) => {
         return res.sendStatus(204);
     });
