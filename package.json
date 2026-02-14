@@ -26,7 +26,6 @@
         "@types/express": "^4.17.21",
         "copy-webpack-plugin": "^12.0.2",
         "eslint": "^8.57.0",
-        "patch-package": "^8.0.1",
         "terser-webpack-plugin": "^5.3.10",
         "ts-loader": "^9.5.1",
         "typescript": "^5.4.5",
@@ -37,6 +36,6 @@
     "dependencies": {
         "body-parser": "^1.20.3",
         "chalk": "^5.3.0",
-        "officeparser": "^4.0.8"
+        "officeparser": "^6.0.4"
     }
 }

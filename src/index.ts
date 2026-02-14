@@ -23,7 +23,7 @@ const MODULE_NAME = '[SillyTavern-Office-Parser]';
  * @param router Express Router
  */
 export async function init(router: Router): Promise<void> {
-    const jsonParser = bodyParser.json({ limit: '100mb' });
+    const jsonParser = bodyParser.json({ limit: '500mb' });
     router.post('/probe', (_req, res) => {
         return res.sendStatus(204);
     });
@@ -34,7 +34,8 @@ export async function init(router: Router): Promise<void> {
             }
             const base64Data = String(req.body.data).split(',')[1];
             const data = Buffer.from(base64Data, 'base64');
-            const result = await officeParser.parseOfficeAsync(data);
+            const ast = await officeParser.parseOffice(data);
+            const result = ast.toText();
             console.log(chalk.green(MODULE_NAME), 'Successfully parsed document');
             return res.send(result);
         } catch (error) {
